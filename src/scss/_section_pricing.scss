@@ -1,0 +1,152 @@
+.section-pricing {
+	background: linear-gradient(rgba(73, 56, 77, 0.8), rgba(73, 56, 77, 0.8)),
+		url('../img/sectionBgn.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&__container {
+		padding: 14px 0 12px 0;
+	}
+
+	&__title {
+		@include text($fontMontserrat, 28px, 42px, 700, $white);
+		text-align: center;
+		padding-bottom: 30px;
+	}
+
+	&__plans {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 18px;
+	}
+}
+
+.pricing-plan {
+	width: 257px;
+
+	&--dark {
+		width: 299px;
+	}
+
+	&__name {
+		@include text($fontMontserrat, 24px, 24px, 400, $white);
+		text-transform: uppercase;
+		width: 100%;
+		text-align: center;
+		background-color: rgba(255, 255, 255, 0.2);
+		padding: 36px 0;
+
+		&--dark {
+			background-color: rgb(59, 41, 59, 0.9);
+			padding: 43px 0;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		background-color: rgba(255, 255, 255, 0.08);
+
+		&--dark {
+			background-color: rgba(70, 48, 72, 0.6);
+		}
+	}
+
+	&__tariff {
+		@include text($fontMontserrat, 60px, 62px, 700, $white);
+		padding: 30px 0 20px 0;
+
+		&--dark {
+			@include text($fontMontserrat, 82px, 84px, 700, $white);
+			padding: 14px 0 16px 0;
+		}
+	}
+
+	&__dollar-sign {
+		font-weight: 400;
+	}
+
+	&__period {
+		@include text($fontMontserrat, 14px, 16px, 400, $white);
+		text-transform: uppercase;
+
+		&::after {
+			@include line(38px);
+		}
+
+		&--dark::after {
+			@include line(46px);
+		}
+	}
+
+	&__support {
+		@include text($fontMontserrat, 16px, 28px, 400, $white);
+		text-align: center;
+		padding: 30px 0 37px 0;
+
+		&--padding {
+			padding: 30px 0 65px 0;
+		}
+
+        &--dark {
+            padding: 40px 0 80px 0;
+        }
+	}
+
+	&__btn {
+		@include btn;
+		background-color: rgba(255, 255, 255, 0.15);
+		border-radius: 25px;
+		text-transform: uppercase;
+		@include text($fontMontserrat, 15px, 15px, 400, $white);
+		padding: 13px 36px;
+		margin-bottom: 36px;
+
+		&--dark {
+			@include text($fontMontserrat, 16px, 18px, 400, $white);
+			padding: 18px 48px;
+			margin-bottom: 47px;
+		}
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.section-pricing {
+		&__title {
+			font-size: 42px;
+			line-height: 44px;
+			padding-bottom: 39px;
+		}
+
+		&__container {
+			padding: 88px 0 94px 0;
+		}
+
+        &__plans {
+            gap: 30px 25px;
+        }
+	}
+}
+
+@media screen and (min-width: 993px) {
+    .section-pricing {
+		&__title {
+			font-size: 48px;
+			line-height: 50px;
+			padding-bottom: 61px;
+		}
+
+		&__container {
+			padding: 112px 0 94px 0;
+		}
+
+        &__plans {
+            gap: 15px;
+        }
+	}
+}

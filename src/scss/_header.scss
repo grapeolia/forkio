@@ -1,0 +1,278 @@
+.container {
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+a {
+    list-style: none;
+}
+
+li {
+    text-decoration: none;
+}
+
+.header {
+    font-family: $header-main-font;
+    background: url(../../dist/img/header/header_bg.png);
+    background-position: center;
+    min-width: 320px;
+    margin-bottom: 130px;
+}
+
+.header-container {
+    @include smallContainer;
+    text-align: center;
+}
+
+.header-line {
+    background-color: $header-bg;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.header-btn {
+    font-family: $header-main-font;
+    border: none;
+    border-radius: 40px;
+    font-weight: bold;
+    color: $white;
+    background: $accentColor;
+}
+
+.header-panel {
+    @include flexSet;
+    &__logo_hidden {
+        display: none;
+        font-weight: bold;
+        font-size: 24px;
+        color: $accentColor;
+        padding-left: 17px;
+    }
+    &__btn {
+        font-weight: bold;
+        padding: 10px 11px;
+        font-size: 15px;
+    }
+}
+
+.burger-menu-list {
+    z-index: 1;
+    display: none;
+    text-align: start;
+    position: absolute;
+    top: 100%;
+    background: $menu-bg;
+    width: calc(100% - 20px);
+    &__item {
+        font-size: 26px;
+        position: relative;
+        list-style: none;
+        &:last-child::after {
+            content: '';
+            display: block;
+            height: 14px;
+        }
+        & a {
+            text-decoration: none;
+            padding-top: 29px;
+            padding-bottom: 31px;
+            padding-left: 35px;
+            border-bottom: 1px solid $menu-border-color;
+            color: $white;
+            display: block;
+            &:hover {
+                padding-left: 39px;
+                color: $accentColor;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 8px;
+                    height: 53px;
+                    background-color: $accentColor;
+                    left: 2px;
+                    top: 17px;
+                }
+            }
+        }
+    }
+    &_visible {
+        display: block;
+        animation-duration: 0.5s;
+        animation-name: menuSlidein;
+    }
+}
+
+.header-remark {
+    font-size: 14px;
+    color: $descTextColor;
+}
+
+.header-card {
+    padding-bottom: 416px;
+    &__tittle {
+        font-size: 48px;
+        color: $white;
+        font-weight: bold;
+        margin: 50px auto 19px;
+    }
+    &__subtittle {
+        color: $accentColor;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    &__remark {
+        margin-top: 14px;
+    }
+}
+
+.download-suggestion {
+    text-align: center;
+    transform: translateY(calc(100% - 19.5px));
+    &__remark {
+        margin-top: 12.5px;
+    }
+    &__btn {
+        font-size: 18px;
+        line-height: 20px;
+        padding: 13px 29px;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    .header {
+        margin-bottom: 158px;
+    }
+    .header-line {
+        padding: 0;
+        padding-top: 22px;
+    }
+    .header-btn:hover {
+        background: $white;
+        color: $accentColor;
+    }
+    .header-panel {
+        margin: 0 10px;
+        @include flexSet;
+        flex-wrap: wrap;
+        &__logo {
+            &_hidden {
+                display: inline-block;
+            }
+            a {
+                text-decoration: none;
+                @include flexSet;
+                &:hover {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+        &__btn {
+            font-size: 16px;
+            line-height: 17px;
+            padding: 10px 36px;
+            &:hover {
+                padding: 9px 35px;
+                border: 1px solid $accentColor;
+            }
+        }
+    }
+    .burger-menu-list {
+        display: flex;
+        position: relative;
+        background: none;
+        justify-content: center;
+        &__item {
+            margin-top: 5px;
+            &:last-child::after {
+                display: none;
+            }
+            a {
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 18px;
+                color: $accentColor;
+                border-bottom: none;
+                padding: 18px 23px;
+                &:hover {
+                    color: $white;
+                    padding: 18px 23px;
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .header-card {
+        padding-bottom: 470px;
+        &__tittle {
+            font-size: 72px;
+            margin: 68px auto 19px;
+        }
+        &__subtittle {
+            font-size: 24px;
+        }
+        &__remark {
+            margin-top: 19px;
+            margin-bottom: 0;
+        }
+    }
+    .download-suggestion {
+        transform: translateY(calc(100% - 39.5px));
+        &__btn {
+            font-size: 21px;
+            line-height: 23px;
+            padding: 23px 61px;
+            &:hover {
+                border: 2px solid $accentColor;
+                padding: 21px 59px;
+            }
+        }
+        &__remark {
+            margin-top: 18.5px;
+            line-height: 16px;
+        }
+    }
+}
+
+@media screen and (min-width: 993px) {
+    .header {
+        margin-bottom: 129px;
+    }
+    .header-container {
+        @include wideContainer;
+    }
+    .header-line {
+        background: none;
+        padding: 0;
+        padding-top: 30px;
+    }
+    .header-panel {
+        @include flexSet;
+        flex-wrap: nowrap;
+        &__btn {
+            order: 1;
+            white-space: nowrap;
+        }
+    }
+    .burger-menu-list {
+        justify-content: flex-end;
+        margin-right: 23px;
+    }
+    .header-card {
+        padding-bottom: 470px;
+        &__tittle {
+            font-size: 82px;
+            margin: 109px auto 19px;
+        }
+        &__subtittle {
+            font-size: 30px;
+        }
+        &__remark {
+            font-size: 16px;
+        }
+    }
+}

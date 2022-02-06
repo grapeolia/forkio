@@ -1,0 +1,158 @@
+.section-youGet {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 32px 0 5px 0;
+	
+	&__title {
+		@include text($fontMontserrat, 32px, 38px, 700, $accentColor);
+		text-align: center;
+	}
+
+	&__cards {
+		padding: 35px 0 65px;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	&__img {
+		height: 381px;
+		width: 100%;
+		object-fit: cover; 
+		object-position: 0 0;
+	}
+}
+
+.youGet-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__title {
+		@include text($fontMontserrat, 16px, 16px, 400, $titleTextColor);
+		text-align: center;
+		padding: 20px 0 15px 0;
+	}
+
+	&__description {
+		@include text($fontLato, 14px, 21px, 400, $descTextColor);
+		text-align: center;
+	}
+
+	&__img-web {
+		padding-left: 25px;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.section-youGet {
+		padding: 60px 0 5px 0;
+
+		&__title {
+			font-size: 42px;
+			line-height: 44px;
+		}
+
+		&__cards {
+			padding: 50px 0 75px;
+			gap: 60px;
+		}
+
+		&__img {
+			height: 519px;
+		}
+	}
+
+	.youGet-card {
+		flex-direction: row;
+		align-items: flex-start;
+
+		&__img {
+			width: 111px;
+		}
+
+		&__img-web {
+			padding-left: 0;
+		}
+
+		&__img-stuff {
+			padding-left: 14px;
+		}
+
+		&__img-webBetter {
+			padding-left: 10px;
+		}
+
+		&__content {
+			width: calc(100% - 111px - 20px);
+			margin-left: 20px;
+		}
+
+		&__title {
+			padding: 0 0 15px 0;
+			text-align: start;
+		}
+
+		&__description {
+			font-family: $fontMontserrat;
+			text-align: start;
+		}
+	}
+}
+
+@media screen and (min-width: 700px){
+	.section-youGet {
+		&__img {
+			object-fit:none;
+			object-position: right;
+		}
+	}
+}
+
+@media screen and (min-width: 993px) {
+	.container {
+		max-width: 1200px;
+	}
+
+	.section-youGet {
+		background-color: $youGetBgn;
+		padding: 98px 0 60px 0;
+
+		&__container {
+			display: flex;
+			flex-direction: row-reverse;
+			gap: 18px;
+		}
+
+		&__title {
+			font-size: 48px;
+			line-height: 50px;
+			flex: 1.1;
+			margin-left: 28px;
+		}
+
+		&__cards {
+			flex: 1;
+			padding: 0;
+		}
+
+		&__img {
+			object-fit:cover;
+			object-position: 0 0;
+			position: absolute;
+			right: 0;
+			max-width: 50%;
+			top: 175px;
+		}
+	}
+}
+
+@media screen and (min-width: 1300px){
+	.section-youGet {
+		&__img {
+			object-fit:none;
+			object-position: right;
+		}
+	}
+}

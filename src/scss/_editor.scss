@@ -1,0 +1,92 @@
+.editor {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 80px 0 88px 0;
+
+	&__title {
+		@include text($fontMontserrat, 26px, 28px, 700, $editorTitleColor);
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	&__description {
+		@include text($fontLato, 14px, 20px, 400, $titleTextColor);
+		padding: 27px 0 37px 0;
+		text-align: center;
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 20px 10px;
+	}
+
+	.editor__button {
+		&-group {
+			display: inline-flex;
+		}
+
+		&-item {
+			display: flex;
+			align-items: center;
+			outline: none;
+			cursor: pointer;
+			border: 1px solid $borderColor;
+			border-top-left-radius: 2px;
+			border-bottom-left-radius: 2px;
+			@include text($fontMontserrat, 10px, 10px, 700, black);
+			padding: 3px 5px;
+		}
+
+		&-svg {
+			width: 16px;
+			height: 16px;
+			padding-right: 3px;
+		}
+
+		&-count {
+			text-decoration: none;
+			border: 1px solid lightgray;
+			border-top-right-radius: 2px;
+			border-bottom-right-radius: 2px;
+			border-left: none;
+			padding: 6px 5px;
+			@include text($fontMontserrat, 10px, 10px, 700, black);
+		}
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.editor {
+		padding: 93px 0 98px 0;
+
+		&__title {
+			font-size: 42px;
+			line-height: 42px;
+		}
+
+            &__description {
+				  font-size: 21px;
+				  line-height: 32px;
+                  padding: 33px 0 24px 0;
+            }
+	}
+}
+
+@media screen and (min-width: 993px) {
+	.editor {
+		padding: 66px 0 70px 0;
+
+		&__title {
+			font-size: 54px;
+			line-height: 54px;
+		}
+
+            &__description {
+                  padding: 35px 0 13px 0;
+            }
+	}
+}

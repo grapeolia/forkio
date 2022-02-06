@@ -1,0 +1,32 @@
+.burger {
+    &__dash {
+        margin: 6px;
+        width: 24px;
+        height: 1px;
+        border: 1px solid $white;
+        border-radius: 20%;
+        background: $white;
+        transition: 0.25s;
+        &:first-child {
+            width: 15px;
+            margin-left: 15px;
+        }
+        &_active:nth-child(1) {
+            opacity: 0;
+        }
+        &_active:nth-child(2) {
+            transform: rotate(-45deg) translate(2.5px, -2px);
+        }
+        &_active:nth-child(3) {
+            transform: rotate(45deg) translate(-1.5px, -3px);
+            position: absolute;
+            top: 47%;
+        }
+    }
+}
+
+@media screen and (min-width: 481px) {
+    .burger {
+        display: none;
+    }
+}

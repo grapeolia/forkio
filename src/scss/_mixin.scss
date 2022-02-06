@@ -1,0 +1,39 @@
+@mixin text($fontFamily, $fontSize, $lineHeight, $fontWeight, $textColor) {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-weight: $fontWeight;
+    color: $textColor;
+}
+
+@mixin btn {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+@mixin line ($marginTop) {
+    display: block;
+    margin: 0 auto;
+    content: "";
+    width: 60px;
+    height: 5px;
+    background-color: $accentColor;
+    margin-top: $marginTop;
+}
+
+@mixin smallContainer {
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+@mixin wideContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@mixin flexSet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
